@@ -32,7 +32,7 @@ library(easystats) # has performance, cor_test, and report
 
 ```
 
-## Make a scatterplot
+## Make a scatter plot
 
 -   Make a scatter plot of the relationship between `age` (x-axis) and `pitch` (y-axis).
 
@@ -135,17 +135,17 @@ Now let's evaluate the model conditions. Check the **linearity**, **constant var
 
 ## `Performance`
 
--   Use the `performance` function to get plots for the assumptions check
+-   Use the `performance` function from the `easystats package` to plot figures of the assumptions checks above
 
     ```{r}
 
 
     ```
 
--   For fun, use the `check_homogeneity` and `check_normality` functions to check if your assessment was correct. There is no function to test linearity.
+-   For fun, use the `check_heteroscedasticity` and `check_normality` functions to check if your assessment was correct. There is no function to test for linearity.
 
     ```{r}
-    performance::check_homogeneity()
+    performance::check_heteroscedasticity()
     performance::check_normality()
 
     ```
