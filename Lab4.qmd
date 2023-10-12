@@ -1,0 +1,165 @@
+---
+title: "Lab 4: Linear Modeling"
+subtitle: "Princeton University"
+author: "Jason Geller, Ph.D.(he/him)"
+date: 'Updated:`r Sys.Date()`'
+format: html
+toc: true
+toc_float: true
+html:
+    code-fold: true
+    code-tools: true
+---
+
+# Lab 4
+
+In this exercise, we will use a dataset that looks at the relationship between age and pitch perception (in Hz). You will build a linear model and answer this question: Does pitch perception change as we age?
+
+Load the `age_pitch.csv` data from Github. Call the tibble `age`: <https://raw.githubusercontent.com/jgeller112/psy503-psych_stats/master/static/slides/10-linear_modeling/data/age_pitch.csv>
+
+```{r}
+library(tidyverse) # plotting
+library(broom) # fit lm models
+library(easystats) # has performance, cor_test, and report
+```
+
+## Distribution of Scores
+
+-   Plot the distribution of each variable
+
+```{r}
+# plot each and combine with together
+
+```
+
+## Make a scatterplot
+
+-   Make a scatter plot of the relationship between `age` (x-axis) and `pitch` (y-axis).
+
+```{r}
+#
+
+```
+
+## Correlation
+
+-   Calculate the correlation between pitch and age and describe the relationship
+
+```{r}
+#
+
+```
+
+## Fit a model
+
+-   Regress `pitch` onto `age` in a linear model. Summarize the model using the `tidy()` function:
+
+```{r}
+#
+
+```
+
+-   Now let's use the model coefficients to describe the relationship.
+
+    -   Interpret the slope. The interpretation should be written in a way that is meaningful in the context of the data. In your interpretation state the null and alternative hypotheses in words, and state the conclusion in the context of the data.
+
+    -   Does it make sense to interpret the intercept? If so, write the interpretation in the context of the data. Otherwise, briefly explain why not.
+
+-   Is our overall model significant? What does it mean if our F test is significant?
+
+```{r}
+
+```
+
+-   What is the $R^2$ value of our model? What does it mean? Does this model explain a lot of variance in pitch?
+
+## Regression line with 95% CIs
+
+-   Make your scatter plot again, but now include 95% CI bands around the line
+
+```{r}
+
+
+```
+
+## Model Predictions
+
+-   Calculate pitch predictions for 20, 30, 40, 50, 60, and 70 year old people
+
+```{r}
+
+
+```
+
+## Checking model assumptions
+
+Now let's evaluate the model conditions. Check the **linearity**, **constant variance**, and **normality** conditions. For each condition, indicate whether it is satisfied along with a brief explanation for your conclusion.
+
+### Normality of Errors
+
+-   Create a a histogram of the residuals
+
+```{r}
+```
+
+-   How does it look?
+
+```{=html}
+<!-- -->
+```
+-   Now create a Q-Q plot
+
+```{r}
+```
+
+### Linearity
+
+-   Next, create a residual vs. fitted plot. For this, all you need to do is plot the fitted values on the x axis and the residuals on the y axis.
+
+```{r}
+
+
+```
+
+-   How does it look?
+
+## Homoscedasticity (constant variance)
+
+-   Test for non-constant variance by look at the residual vs. fitted plot from above
+
+```{r}
+
+```
+
+-   How does it look?
+
+## `Performance`
+
+-   Use the `performance` function to get plots for the assumptions check
+
+    ```{r}
+
+
+    ```
+
+-   For fun, use the `check_homogeneity` and `check_normality` functions to check if your assessment was correct. There is no function to test linearity.
+
+    ```{r}
+    performance::check_homogeneity()
+    performance::check_normality()
+
+    ```
+
+## Write-up
+
+-   Compose your results in accordance with APA style. Within your write-up, ensure the following elements are discussed:
+
+    1.  An evaluation of the overall model fit, encompassing both the F-test and $R^2$ value.
+
+    2.  Tests and interpretations for individual parameters.
+
+    3.  Any violations of model assumptions, and elaborate on them if present.
+
+    4.  A conclusive statement summarizing your findings from the analysis.
+
+    Please incorporate relevant visualizations, including a scatter plot annotated with the regression line, as well as graphics related to assumption checks. While the **`report`** function can aid in generating your analysis, avoid submitting its direct output verbatim.
