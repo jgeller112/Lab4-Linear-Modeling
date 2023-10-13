@@ -28,7 +28,7 @@ library(easystats) # has performance, cor_test, and report
 -   Plot the distribution of each variable
 
 ```{r}
-# plot each and combine with together
+# plot each and combine with patchwork
 
 ```
 
@@ -38,7 +38,6 @@ library(easystats) # has performance, cor_test, and report
 
 ```{r}
 #
-
 ```
 
 ## Correlation
@@ -125,7 +124,7 @@ Now let's evaluate the model conditions. Check the **linearity**, **constant var
 
 ## Homoscedasticity (constant variance)
 
--   Test for non-constant variance by look at the residual vs. fitted plot from above
+-   Test for non-constant variance by looking at the residual vs. fitted plot from above
 
 ```{r}
 
